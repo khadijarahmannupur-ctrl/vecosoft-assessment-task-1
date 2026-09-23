@@ -1,0 +1,31 @@
+claude-code-prompt : https://claude.ai/share/b376e81b-5ab1-41f1-8f26-d49b7ece1ab6
+
+antigravity-prompt : 
+
+1.Build a mobile-first Order Tracking screen for an e-commerce app using Next.js (App Router), Tailwind CSS and lucide-react. Use mock/static data only. No backend.
+
+Goal: the current app only shows Processing, Shipped, Out for Delivery, Delivered, and users find it hard to understand. Make delivery status clear at a glance.
+
+The screen must include:
+- Header with order ID and a clear current status badge (color-coded)
+- Visual progress timeline of the 4 steps (Processing, Shipped, Out for Delivery, Delivered) with completed / current / upcoming styles, plus timestamps
+- Estimated delivery date/time in a prominent card
+- Order/product summary (item image, name, qty, price, delivery address)
+- "Contact Support" button opening a bottom sheet (chat, call, email options)
+- "View Order Details" opening a bottom sheet or expandable section
+- "Report a Delivery Issue" action opening a simple form (issue type, note, submit, success message)
+- Loading (skeleton), empty (order not found) and error (with Retry button) states
+- Responsive for 360-430px width, centered on larger screens. Clean spacing, typography, hierarchy, consistent design. Accessible (aria labels, focus states, good contrast).
+
+It must handle these 3 scenarios, and adapt the same UI to each:
+1. Delayed Order: estimated time has passed or is significantly delayed. Show a clear delay banner ("Running late by X"), updated ETA, apology, and next steps (Contact Support, Cancel/Request update).
+2. Delivered but Not Received: system says delivered but customer did not get it. Show delivery proof info (time, location note), a "I didn't receive it" button leading to a guided flow (check with neighbors/building, then Report Missing Package / Contact Support).
+3. Tracking Not Available Yet: order is confirmed but no tracking info. Show a friendly state with what happens next, expected time for tracking, and a support option. Avoid an empty or broken-looking screen.
+
+Also add a small scenario switcher (floating "Demo" pill or dropdown) so the reviewer can switch between: Normal, Delayed, Delivered-Not-Received, No Tracking, Loading, Error, Empty.
+
+Code quality: clean folder structure, reusable components (StatusBadge, Timeline, EtaCard, OrderSummary, SupportSheet, IssueForm), mock data in a separate file, TypeScript types.
+
+Also create a README.md with short setup/run instructions (install, dev, build), a short explanation of design decisions, and make sure the project builds without errors and is ready to deploy on Vercel. Do NOT create AI_PROMPT_HISTORY.txt.
+
+
